@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../public/logo.png';
 import Image from 'next/image';
 import styles from './Nav.module.css';
+import arrow from '../../public/arrow.png';
 
 function Nav() {
   return (
@@ -18,7 +19,10 @@ function Nav() {
           </ul>
           <div className={styles.btnContainer}>
             <button className={styles.login}>Log In</button>
-            <button className={styles.signUp}>Sign Up</button>
+            <button className={styles.signUp}>
+              <span className={styles.text}>Sign Up</span>
+              <Image src={arrow} alt="arrow" />
+            </button>
           </div>
         </div>
       </div>
