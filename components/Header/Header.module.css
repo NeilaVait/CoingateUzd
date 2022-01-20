@@ -1,0 +1,33 @@
+.wrapper {
+  width: calc(100% - 50%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-top: 5%;
+}
+.textContainer {
+  color: #ffffff;
+  /* font-weight: normal; */
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.green,
+.link {
+  color: #16dfb5;
+}
+
+.paragraph {
+  font-size: 14px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  gap: 0.5rem;
+}
