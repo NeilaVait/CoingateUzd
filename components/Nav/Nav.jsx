@@ -10,11 +10,17 @@ function Nav() {
         <div className={styles.logoContainer}>
           <Image src={logo} alt="logo" />
         </div>
-        <ul className={styles.menuList}>
-          <li className={styles.menuItem}>Products</li>
-          <li className={styles.menuItem}>Resources</li>
-          <li className={styles.menuItem}>Buy instantly</li>
-        </ul>
+        <div className={styles.menuContainer}>
+          <ul className={styles.menuList}>
+            <li className={styles.menuItem}>Products</li>
+            <li className={styles.menuItem}>Resources</li>
+            <li className={styles.menuItem}>Buy instantly</li>
+          </ul>
+          <div className={styles.btnContainer}>
+            <button className={styles.login}>Log In</button>
+            <button className={styles.signUp}>Sign Up</button>
+          </div>
+        </div>
       </div>
     </nav>
   );
