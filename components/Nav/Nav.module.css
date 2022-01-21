@@ -30,6 +30,7 @@
 
 .menuItem {
   cursor: pointer;
+  font-size: 0.8rem;
 }
 
 .menuContainer {
@@ -39,16 +40,17 @@
 }
 
 .btnContainer {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+  /* display: flex;
+  justify-content: space-between; */
 }
 
 .login {
-  width: 70px;
-  height: 32px;
+  width: 150px;
+  min-width: 100px;
+  height: 50px;
+  min-height: 30px;
   background: #ffffff;
-  font-size: 17px;
+  font-size: 1rem;
   line-height: 32px;
   border: none;
   color: #7f88a0;
@@ -56,11 +58,13 @@
 }
 
 .signUp {
-  width: 145px;
+  width: 150px;
+  min-width: 100px;
   height: 50px;
+  min-height: 30px;
   border: none;
   background: #16dfb5;
-  font-size: 17px;
+  font-size: 1rem;
   color: snow;
   cursor: pointer;
   border-radius: 4px 50px 50px 20px;

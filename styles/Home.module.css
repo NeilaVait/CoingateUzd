@@ -2,13 +2,14 @@
   position: absolute;
   height: 1493.46px;
   left: 15%;
-  right: -3.69%;
-  top: -1000px;
+  right: -8%;
+  top: -650px;
   background: #5022ed;
   transform: matrix(1, -0.04, -0.04, -1, 0, 0);
   border-radius: 50px;
   z-index: -1;
 }
+
 .main {
   position: relative;
 }
