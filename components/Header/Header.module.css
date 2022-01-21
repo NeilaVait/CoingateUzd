@@ -1,19 +1,19 @@
 .wrapper {
   width: calc(100% - 50%);
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 5rem;
   padding-top: 5%;
 }
+
 .textContainer {
   color: #ffffff;
-  /* font-weight: normal; */
 }
 
 .heading {
   font-weight: bold;
-  font-size: 40px;
+  font-size: 2rem;
 }
 
 .green,
@@ -30,4 +30,7 @@
   align-items: center;
   font-size: 12px;
   gap: 0.5rem;
+}
+.converter {
+  padding-top: 1rem;
 }
