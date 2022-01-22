@@ -3,7 +3,7 @@ import styles from './Converter.module.css';
 
 function Converter() {
   return (
-    <div className={styles.converterContainer}>
+    <>
       <div className={styles.bg}></div>
       <form className={styles.form}>
         <div className={styles.inputContainer}>
@@ -18,7 +18,7 @@ function Converter() {
         </select>
         <button className={styles.btn}>Buy BTC</button>
       </form>
-    </div>
+    </>
   );
 }
 
