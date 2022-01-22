@@ -1,26 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Converter.module.css';
-import btc from '../../public/arrowGreen.png';
-import Image from 'next/image';
+import Select from 'react-select';
+import { components } from 'react-select';
+const { SingleValue, Option } = components;
+
+const options = [
+  { value: 'chocolate', label: 'Chocolate', img: 'https://cryptoicons.org/api/icon/eth/200' },
+  { value: 'strawberry', label: 'Strawberry', img: 'https://cryptoicons.org/api/icon/eth/200' },
+  { value: 'vanilla', label: 'Vanilla', img: 'https://cryptoicons.org/api/icon/eth/200' },
+];
 
 function Converter() {
+  const [selectedOption, setSelectedOption] = useState(null);
+
   return (
     <>
-      <div className={styles.bg}></div>
+      <div className={styles.bg}></div>\
       <form className={styles.form}>
         <div className={styles.inputContainer}>
           <div className={styles.payContainer}>
             <input className={styles.input} type="number" />
             <span className={styles.pay}>Pay</span>
-
-            <select className={styles.payCurr} name="" id="">
-              <option id="eur" value="">
-                EUR
-              </option>
+            {/* <select className={styles.payCurr} name="" id="">
               <option value="">EUR</option>
               <option value="">EUR</option>
               <option value="">EUR</option>
-            </select>
+              <option value="">EUR</option>
+            </select> */}
+            <Select defaultValue={selectedOption} onChange={setSelectedOption} options={options} />
           </div>
           <div className={styles.buyContainer}>
             <input className={styles.input} type="number" />
