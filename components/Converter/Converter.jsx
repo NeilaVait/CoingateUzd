@@ -1,42 +1,44 @@
 import React, { useState } from 'react';
 import styles from './Converter.module.css';
-import Select from 'react-select';
-import { components } from 'react-select';
-const { SingleValue, Option } = components;
 
-const options = [
-  { value: 'chocolate', label: 'Chocolate', img: 'https://cryptoicons.org/api/icon/eth/200' },
-  { value: 'strawberry', label: 'Strawberry', img: 'https://cryptoicons.org/api/icon/eth/200' },
-  { value: 'vanilla', label: 'Vanilla', img: 'https://cryptoicons.org/api/icon/eth/200' },
-];
+const ratesUrl = 'https://api.coingate.com/v2/rates';
 
-function Converter() {
-  const [selectedOption, setSelectedOption] = useState(null);
+function Converter({ data }) {
+  const crypto = [...Object.keys(data.trader.buy)];
+
+  const currAndCryptoArr = [...Object.keys(data.merchant.ADA)];
+
+  const currArr = currAndCryptoArr.filter((item) => !crypto.includes(item));
+  // console.log(currArr);
+
+  const [payCurrency, setPayCurrency] = useState('');
+  const [buyCurrency, setBuyCurrency] = useState('');
 
   return (
     <>
-      <div className={styles.bg}></div>\
+      <div className={styles.bg}></div>
       <form className={styles.form}>
         <div className={styles.inputContainer}>
           <div className={styles.payContainer}>
             <input className={styles.input} type="number" />
             <span className={styles.pay}>Pay</span>
-            {/* <select className={styles.payCurr} name="" id="">
-              <option value="">EUR</option>
-              <option value="">EUR</option>
-              <option value="">EUR</option>
-              <option value="">EUR</option>
-            </select> */}
-            <Select defaultValue={selectedOption} onChange={setSelectedOption} options={options} />
+            <select className={styles.payCurr} value={payCurrency} onChange={(e) => setPayCurrency(e.target.value)}>
+              {currArr.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
           </div>
           <div className={styles.buyContainer}>
             <input className={styles.input} type="number" />
             <span className={styles.buy}>Buy</span>
-            <select className={styles.buyCurr} name="" id="">
-              <option value="">BTC</option>
-              <option value="">BTC</option>
-              <option value="">BTC</option>
-              <option value="">BTC</option>
+            <select className={styles.buyCurr} value={buyCurrency} onChange={(e) => setBuyCurrency(e.target.value)}>
+              {crypto.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
             </select>
           </div>
         </div>
@@ -51,5 +53,13 @@ function Converter() {
     </>
   );
 }
+
+// export async function getServerSideProps(context) {
+//   const data = await fetch(ratesUrl);
+//   const rates = await data.json();
+//   console.log(rates);
+
+//   return { props: { currencies } };
+// }
 
 export default Converter;

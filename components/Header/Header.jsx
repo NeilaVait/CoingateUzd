@@ -4,7 +4,7 @@ import arrowGreen from '../../public/arrowGreen.png';
 import Image from 'next/image';
 import Converter from '../Converter/Converter';
 
-function Header() {
+function Header({ data }) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.textContainer}>
@@ -25,7 +25,7 @@ function Header() {
         </a>
       </div>
       <div className={styles.converter}>
-        <Converter />
+        <Converter data={data} />
       </div>
     </div>
   );

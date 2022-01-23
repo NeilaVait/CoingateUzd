@@ -115,3 +115,23 @@
   font-size: 0.9rem;
   margin: 2rem 0 2rem;
 }
+
+.currOptions {
+  display: flex;
+  align-items: center;
+}
+
+.currOptions > img {
+  margin-right: 0.2rem;
+}
+
+.currOptions > span {
+  font-size: 0.8rem;
+}
+
+.selectContainer {
+  width: 7rem;
+  position: relative;
+  left: 65%;
+  bottom: 50%;
+}
